@@ -17,12 +17,12 @@ bitmoji_b64 = (
     or get_base64_image("bitmoji.jpeg")
 )
 
-# Custom Cartoon CSS, Floating Animations & Multicolor Theme
+# Custom Cartoon CSS, Floating Stickers & Multicolor Theme
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@600;700&display=swap');
 
-/* Animated Multicolor Doraemon & Candy Sky Background */
+/* Animated Multicolor Cartoon Sky Background */
 .stApp {
     background: linear-gradient(-45deg, #00a8ff, #ff6b8b, #feca57, #48dbfb, #a29bfe, #ff9ff3);
     background-size: 400% 400%;
@@ -124,16 +124,35 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-/* Cartoon Sticker GIF Frame */
-.toon-gif {
-    border-radius: 22px;
-    border: 5px solid #ffffff;
-    box-shadow: 6px 6px 0px #2f3542;
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    margin-bottom: 12px;
+/* Pure Cartoon Sticker Frame with Bouncing Animation */
+.toon-card-box {
     background: #ffffff;
+    border-radius: 24px;
+    border: 5px solid #2f3542;
+    box-shadow: 7px 7px 0px #2f3542;
+    padding: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    animation: popSticker 2.5s ease-in-out infinite;
+}
+
+.toon-pic {
+    border-radius: 16px;
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+}
+
+.toon-label {
+    font-family: 'Fredoka One', cursive;
+    font-size: 15px;
+    color: #ff4757;
+    margin-top: 6px;
+}
+
+@keyframes popSticker {
+    0%, 100% { transform: scale(1) rotate(-1deg); }
+    50% { transform: scale(1.04) rotate(1deg); }
 }
 
 /* Input Box Styling */
@@ -180,14 +199,29 @@ else:
     """, unsafe_allow_html=True)
     st.info("💡 Tip: Upload 'bitmoji.png' to your GitHub repository so Sidra's Snapchat Bitmoji appears right here!")
 
-# 3. Preview Cartoon Row (Tom & Jerry + Doraemon guarding the Vault)
+# 3. Preview Cartoon Row (100% Pure Cartoons: Doraemon, Happy Jerry, Excited Pikachu)
 g1, g2, g3 = st.columns(3)
 with g1:
-    st.markdown('<img src="https://media.giphy.com/media/b8RfbQFaOs1rO10ren/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="toon-card-box">
+        <img src="https://media.giphy.com/media/noKPfoiakFXsk/giphy.gif" class="toon-pic">
+        <div class="toon-label" style="color:#0097e6;">Happy Doraemon! 🔔</div>
+    </div>
+    """, unsafe_allow_html=True)
 with g2:
-    st.markdown('<img src="https://media.giphy.com/media/noKPfoiakFXsk/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="toon-card-box" style="animation-delay: 0.4s;">
+        <img src="https://media.giphy.com/media/y9QemIlaYYWdi/giphy.gif" class="toon-pic">
+        <div class="toon-label" style="color:#ffa502;">Excited Jerry! 🧀</div>
+    </div>
+    """, unsafe_allow_html=True)
 with g3:
-    st.markdown('<img src="https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="toon-card-box" style="animation-delay: 0.8s;">
+        <img src="https://media.giphy.com/media/xuXzcHMkuwvf2/giphy.gif" class="toon-pic">
+        <div class="toon-label" style="color:#ff4757;">Super Hyped! ⚡</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 # 4. Passcode Lock Card
 st.markdown("""
@@ -207,14 +241,29 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
     
     st.markdown("<h2>🎉 HAPPY 24th BIRTHDAY SIDRA! 🎉</h2>", unsafe_allow_html=True)
     
-    # Row 1 of Tom & Jerry + Doraemon Party Animations
+    # Row 1 of Pure Excited Cartoons (Doraemon Party, Tom & Jerry Laughing, SpongeBob Cheering)
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.markdown('<img src="https://media.giphy.com/media/y9QemIlaYYWdi/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="toon-card-box">
+            <img src="https://media.giphy.com/media/KdrWY4sOKhpyVvwWiZ/giphy.gif" class="toon-pic">
+            <div class="toon-label" style="color:#0097e6;">Doraemon Dance! 🕺</div>
+        </div>
+        """, unsafe_allow_html=True)
     with c2:
-        st.markdown('<img src="https://media.giphy.com/media/KdrWY4sOKhpyVvwWiZ/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="toon-card-box" style="animation-delay: 0.5s;">
+            <img src="https://media.giphy.com/media/8rEiN2GsOdQTm/giphy.gif" class="toon-pic">
+            <div class="toon-label" style="color:#ff4757;">Besties Forever! 🐱🐭</div>
+        </div>
+        """, unsafe_allow_html=True)
     with c3:
-        st.markdown('<img src="https://media.giphy.com/media/8rEiN2GsOdQTm/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="toon-card-box" style="animation-delay: 1s;">
+            <img src="https://media.giphy.com/media/nDSlfqf0gn5g4/giphy.gif" class="toon-pic">
+            <div class="toon-label" style="color:#ffa502;">Pure Joy! 🌟</div>
+        </div>
+        """, unsafe_allow_html=True)
 
     # Story Card 1: 20 March Ramadan Story
     st.markdown("""
@@ -236,14 +285,29 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
     </div>
     """, unsafe_allow_html=True)
 
-    # Row 2 of Cartoons
+    # Row 2 of Pure Excited Cartoons (Doraemon Flying, Minions Cheering, Cartoon Party)
     d1, d2, d3 = st.columns(3)
     with d1:
-        st.markdown('<img src="https://media.giphy.com/media/l4EoPk1lohVe4674I/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="toon-card-box">
+            <img src="https://media.giphy.com/media/l4EoPk1lohVe4674I/giphy.gif" class="toon-pic">
+            <div class="toon-label" style="color:#0097e6;">Flying High! 🚁</div>
+        </div>
+        """, unsafe_allow_html=True)
     with d2:
-        st.markdown('<img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="toon-card-box" style="animation-delay: 0.4s;">
+            <img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif" class="toon-pic">
+            <div class="toon-label" style="color:#ffa502;">Yayyy Birthday! 🎉</div>
+        </div>
+        """, unsafe_allow_html=True)
     with d3:
-        st.markdown('<img src="https://media.giphy.com/media/GeimqsH0TLDt4tScGw/giphy.gif" class="toon-gif">', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="toon-card-box" style="animation-delay: 0.8s;">
+            <img src="https://media.giphy.com/media/blSTtZehjAZ8I/giphy.gif" class="toon-pic">
+            <div class="toon-label" style="color:#8c7ae6;">Party Mode! 🎶</div>
+        </div>
+        """, unsafe_allow_html=True)
 
     # Story Card 3: Level 24 Verdict
     st.markdown("""
@@ -263,9 +327,19 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
         st.markdown("<h2>✨ CHAPTER 24: OFFICIALLY THE GREATEST BEST FRIEND EVER! ✨</h2>", unsafe_allow_html=True)
         s1, s2 = st.columns(2)
         with s1:
-            st.markdown('<img src="https://media.giphy.com/media/artj92V8o75VPL7AeQ/giphy.gif" class="toon-gif" style="height: 240px;">', unsafe_allow_html=True)
+            st.markdown("""
+            <div class="toon-card-box">
+                <img src="https://media.giphy.com/media/fzFiKLW1BFsaY/giphy.gif" class="toon-pic" style="height: 220px;">
+                <div class="toon-label" style="color:#0097e6;">Best Friends Forever! 💙</div>
+            </div>
+            """, unsafe_allow_html=True)
         with s2:
-            st.markdown('<img src="https://media.giphy.com/media/feio2yIUMtdqWjRiaF/giphy.gif" class="toon-gif" style="height: 240px;">', unsafe_allow_html=True)
+            st.markdown("""
+            <div class="toon-card-box">
+                <img src="https://media.giphy.com/media/3o6fJ1BM7R2EBRDnxK/giphy.gif" class="toon-pic" style="height: 220px;">
+                <div class="toon-label" style="color:#ff4757;">Happy 24th Birthday Sidra! 🎂</div>
+            </div>
+            """, unsafe_allow_html=True)
 
 elif password != "":
     st.error("❌ Jerry says wrong passcode! Hint: Think back to Ramadan right after Iftari & Maghrib! (Format: 20 March) 🌙")
