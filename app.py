@@ -260,7 +260,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-password = st.text_input("✨ Type the secret date here (Format: 20 March) and press Enter:", "")
+password = st.text_input("✨ Type the secret date here (Format: 17 October, etc) and press Enter:", "")
 
 # 5. Unlocked Birthday World
 if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march "]:
