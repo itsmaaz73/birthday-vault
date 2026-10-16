@@ -4,7 +4,7 @@ import base64
 
 st.set_page_config(page_title="Secret Vault for Sidra 🎂", page_icon="🐱", layout="centered")
 
-# Helper to load Sidra's Bitmoji cleanly inside custom HTML
+# Helper to load images cleanly inside custom HTML
 def get_base64_image(image_path):
     if os.path.exists(image_path):
         with open(image_path, "rb") as img_file:
@@ -15,6 +15,12 @@ bitmoji_b64 = (
     get_base64_image("bitmoji.png")
     or get_base64_image("bitmoji.jpg")
     or get_base64_image("bitmoji.jpeg")
+)
+
+cake_b64 = (
+    get_base64_image("cake.png")
+    or get_base64_image("cake.jpg")
+    or get_base64_image("cake.jpeg")
 )
 
 # Custom Cartoon CSS, Floating Stickers & Multicolor Theme
@@ -47,7 +53,7 @@ h1, h2, h3 {
 /* Giant Finale Title for Sidra */
 .giant-bday-title {
     font-family: 'Fredoka One', cursive !important;
-    font-size: 54px !important;
+    font-size: 50px !important;
     color: #ffffff !important;
     text-shadow: 5px 5px 0px #ff4757, 9px 9px 0px #2f3542 !important;
     text-align: center;
@@ -156,6 +162,14 @@ h1, h2, h3 {
     background: #f1f2f6;
 }
 
+.finale-pic {
+    border-radius: 16px;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    background: #f1f2f6;
+}
+
 .toon-label {
     font-family: 'Fredoka One', cursive;
     font-size: 15px;
@@ -212,7 +226,7 @@ else:
     """, unsafe_allow_html=True)
     st.info("💡 Tip: Upload 'bitmoji.png' to your GitHub repository so Sidra's Snapchat Bitmoji appears right here!")
 
-# 3. Preview Cartoon Row (Happy Doraemon, Good-Vibe Cute Jerry, Excited Pikachu)
+# 3. Preview Cartoon Row
 g1, g2, g3 = st.columns(3)
 with g1:
     st.markdown("""
@@ -222,7 +236,6 @@ with g1:
     </div>
     """, unsafe_allow_html=True)
 with g2:
-    # Replaced fighting Tom & Jerry with happy, wholesome Jerry & Nibbles!
     st.markdown("""
     <div class="toon-card-box" style="animation-delay: 0.4s;">
         <img src="https://media.tenor.com/T4h5q6QMk00AAAAM/tom-and-jerry-flattered.gif" class="toon-pic">
@@ -255,7 +268,7 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
     
     st.markdown("<h2>🎉 HAPPY 24th BIRTHDAY SIDRA! 🎉</h2>", unsafe_allow_html=True)
     
-    # Row 1: Fixed all 3 boxes! Now 100% working Doraemon & Tom and Jerry animations (No SpongeBob!)
+    # Row 1
     c1, c2, c3 = st.columns(3)
     with c1:
         st.markdown("""
@@ -279,7 +292,7 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
         </div>
         """, unsafe_allow_html=True)
 
-    # Story Card 1: 20 March Ramadan Story
+    # Story Card 1
     st.markdown("""
     <div class="cartoon-card card-tom">
         <div class="card-title" style="color: #ff4757;">🌙 20th March: Better Than Doraemon's Anywhere Door!</div>
@@ -289,7 +302,7 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
     </div>
     """, unsafe_allow_html=True)
 
-    # Story Card 2: Tom & Jerry Referee for Wifey
+    # Story Card 2
     st.markdown("""
     <div class="cartoon-card card-jerry">
         <div class="card-title" style="color: #ffa502;">🐱🐭 Official Tom & Jerry Peacekeeper!</div>
@@ -299,7 +312,7 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
     </div>
     """, unsafe_allow_html=True)
 
-    # Row 2: Replaced broken Flying High & real-person Party GIF with Doraemon & Tom and Jerry!
+    # Row 2
     d1, d2, d3 = st.columns(3)
     with d1:
         st.markdown("""
@@ -323,7 +336,7 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
         </div>
         """, unsafe_allow_html=True)
 
-    # Story Card 3: Level 24 Verdict
+    # Story Card 3
     st.markdown("""
     <div class="cartoon-card card-sidra">
         <div class="card-title" style="color: #8c7ae6;">👑 Welcome to Level 24, Bestie!</div>
@@ -333,7 +346,7 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
     </div>
     """, unsafe_allow_html=True)
 
-    # Interactive Finale Button -> ONLY Big "Happy 24th Birthday Sidra" + Cute Cartoon Girl
+    # Interactive Finale Button -> Big Title + Your Custom Bitmoji Cake Image
     st.write("")
     if st.button("🔔 CLICK TO OPEN DORAEMON'S 24th BIRTHDAY POCKET! 🎁"):
         st.snow()
@@ -342,14 +355,20 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
         
         f1, f2, f3 = st.columns([1, 2, 1])
         with f2:
-            st.markdown("""
-            <div class="toon-card-box">
-                <img src="https://media.tenor.com/aKFaZBrZFYcAAAAC/excited-spin.gif" 
-                     onerror="this.onerror=null; this.src='https://media.giphy.com/media/fzFiKLW1BFsaY/giphy.gif';" 
-                     class="toon-pic" style="height: 290px;">
-                <div class="toon-label" style="color:#ff4757; font-size: 20px;">Best Friends Forever! 💖🎉</div>
-            </div>
-            """, unsafe_allow_html=True)
+            if cake_b64:
+                st.markdown(f"""
+                <div class="toon-card-box">
+                    <img src="data:image/png;base64,{cake_b64}" class="finale-pic">
+                    <div class="toon-label" style="color:#ff4757; font-size: 20px;">Best Friends Forever! 💖🎉</div>
+                </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown("""
+                <div class="toon-card-box">
+                    <div style="font-size: 80px;">🎂🍰</div>
+                    <div class="toon-label" style="color:#ff4757; font-size: 20px;">Upload 'cake.png' to GitHub! 💖🎉</div>
+                </div>
+                """, unsafe_allow_html=True)
 
 elif password != "":
     st.error("❌ Jerry says wrong passcode! Hint: Think back to Ramadan right after Iftari & Maghrib! (Format: 20 March) 🌙")
