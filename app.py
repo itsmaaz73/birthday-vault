@@ -233,4 +233,121 @@ with g3:
     st.markdown("""
     <div class="toon-card-box" style="animation-delay: 0.8s;">
         <img src="https://media.giphy.com/media/xuXzcHMkuwvf2/giphy.gif" class="toon-pic">
-        <div class="toon-label" style="color:#ff4757;">
+        <div class="toon-label" style="color:#ff4757;">Super Hyped! ⚡</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+# 4. Passcode Lock Card
+st.markdown("""
+<div class="cartoon-card card-doraemon" style="text-align: center;">
+    <div class="card-title" style="color: #0097e6;">🔔 Doraemon & Jerry's Secret Passcode 🔔</div>
+    <div class="card-text">
+        To unlock Sidra's <b>24th Birthday Toon World</b>, enter the exact date (Day & Month) a random Snapchat story right after Iftari & Maghrib turned into the best friendship ever!
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+password = st.text_input("✨ Type the secret date here (Format: 20 March) and press Enter:", "")
+
+# 5. Unlocked Birthday World
+if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march "]:
+    st.balloons()
+    
+    st.markdown("<h2>🎉 HAPPY 24th BIRTHDAY SIDRA! 🎉</h2>", unsafe_allow_html=True)
+    
+    # Row 1: Fixed all 3 boxes! Now 100% working Doraemon & Tom and Jerry animations (No SpongeBob!)
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.markdown("""
+        <div class="toon-card-box">
+            <img src="https://media.tenor.com/3tVyjBgBtaoAAAAd/doraemon-love.gif" class="toon-pic">
+            <div class="toon-label" style="color:#0097e6;">Doraemon Joy! 💙</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with c2:
+        st.markdown("""
+        <div class="toon-card-box" style="animation-delay: 0.5s;">
+            <img src="https://media.tenor.com/cXq9MnuGf2gAAAAM/tom-and-jerry-nibbles.gif" class="toon-pic">
+            <div class="toon-label" style="color:#ff4757;">Besties Vibe! 🐱🐭</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with c3:
+        st.markdown("""
+        <div class="toon-card-box" style="animation-delay: 1s;">
+            <img src="https://media.tenor.com/iasB1Bq9Qo0AAAAM/doraemon-silly.gif" class="toon-pic">
+            <div class="toon-label" style="color:#ffa502;">Doraemon Dance! 🌟</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Story Card 1: 20 March Ramadan Story
+    st.markdown("""
+    <div class="cartoon-card card-tom">
+        <div class="card-title" style="color: #ff4757;">🌙 20th March: Better Than Doraemon's Anywhere Door!</div>
+        <div class="card-text">
+            It is honestly crazy to think that we have never met in person, yet I tell you literally everything about my personal life! All because you saw my Snapchat story and added me on <b>20th March in Ramadan</b>, right after Iftari and Maghrib prayer. Distance means nothing when a friendship is this real! 🌟
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Story Card 2: Tom & Jerry Referee for Wifey
+    st.markdown("""
+    <div class="cartoon-card card-jerry">
+        <div class="card-title" style="color: #ffa502;">🐱🐭 Official Tom & Jerry Peacekeeper!</div>
+        <div class="card-text">
+            Whenever me and my wifey fight and get angry at each other like <b>Tom and Jerry</b>, you always step in, calm both of us down, and help us go back to normal! Thank you for always supporting my relationship and having my back through everything. 🕊️💖
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Row 2: Replaced broken Flying High & real-person Party GIF with Doraemon & Tom and Jerry!
+    d1, d2, d3 = st.columns(3)
+    with d1:
+        st.markdown("""
+        <div class="toon-card-box">
+            <img src="https://media.tenor.com/CR9rMH84okoAAAAd/doraemon-cartoon.gif" class="toon-pic">
+            <div class="toon-label" style="color:#0097e6;">Doraemon Magic! 🔔</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with d2:
+        st.markdown("""
+        <div class="toon-card-box" style="animation-delay: 0.4s;">
+            <img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif" class="toon-pic">
+            <div class="toon-label" style="color:#ffa502;">Yayyy Birthday! 🎉</div>
+        </div>
+        """, unsafe_allow_html=True)
+    with d3:
+        st.markdown("""
+        <div class="toon-card-box" style="animation-delay: 0.8s;">
+            <img src="https://media.tenor.com/dyoWrED-VEQAAAAM/jerry-the-mouse-tom-and-jerry.gif" class="toon-pic">
+            <div class="toon-label" style="color:#8c7ae6;">Cartoon Party! 🎶</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # Story Card 3: Level 24 Verdict
+    st.markdown("""
+    <div class="cartoon-card card-sidra">
+        <div class="card-title" style="color: #8c7ae6;">👑 Welcome to Level 24, Bestie!</div>
+        <div class="card-text">
+            You are hands down the best person in friendship I have ever met. Sometimes I genuinely wonder how someone so pure-hearted and perfect like you even exists in this world! Wishing you the happiest <b>24th Birthday</b> filled with endless smiles, cartoons, peace, and success! 🎂🎁🌈
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Interactive Finale Button -> ONLY Big "Happy 24th Birthday Sidra" + Cute Cartoon Girl
+    st.write("")
+    if st.button("🔔 CLICK TO OPEN DORAEMON'S 24th BIRTHDAY POCKET! 🎁"):
+        st.snow()
+        st.balloons()
+        st.markdown('<div class="giant-bday-title">🎂 HAPPY 24th BIRTHDAY SIDRA! 🎂</div>', unsafe_allow_html=True)
+        
+        f1, f2, f3 = st.columns([1, 2, 1])
+        with f2:
+            st.markdown("""
+            <div class="toon-card-box">
+                <img src="https://media.tenor.com/images/1d45fdc4d4b4e02e4f9da9ebd5637d93/tenor.gif" class="toon-pic" style="height: 290px;">
+                <div class="toon-label" style="color:#ff4757; font-size: 20px;">Best Friends Forever! 💖🎉</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+elif password != "":
+    st.error("❌ Jerry says wrong passcode! Hint: Think back to Ramadan right after Iftari & Maghrib! (Format: 20 March) 🌙")
