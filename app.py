@@ -344,7 +344,9 @@ if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march 
         with f2:
             st.markdown("""
             <div class="toon-card-box">
-                <img src="https://media.tenor.com/images/1d45fdc4d4b4e02e4f9da9ebd5637d93/tenor.gif" class="toon-pic" style="height: 290px;">
+                <img src="https://media.tenor.com/aKFaZBrZFYcAAAAC/excited-spin.gif" 
+                     onerror="this.onerror=null; this.src='https://media.giphy.com/media/fzFiKLW1BFsaY/giphy.gif';" 
+                     class="toon-pic" style="height: 290px;">
                 <div class="toon-label" style="color:#ff4757; font-size: 20px;">Best Friends Forever! 💖🎉</div>
             </div>
             """, unsafe_allow_html=True)
