@@ -44,6 +44,18 @@ h1, h2, h3 {
     letter-spacing: 1px;
 }
 
+/* Giant Finale Title for Sidra */
+.giant-bday-title {
+    font-family: 'Fredoka One', cursive !important;
+    font-size: 54px !important;
+    color: #ffffff !important;
+    text-shadow: 5px 5px 0px #ff4757, 9px 9px 0px #2f3542 !important;
+    text-align: center;
+    line-height: 1.2;
+    margin: 25px 0 15px 0;
+    animation: wiggleCake 1.5s infinite;
+}
+
 /* Floating Bitmoji & Level 24 Cake Showcase */
 .bitmoji-wrapper {
     text-align: center;
@@ -84,8 +96,8 @@ h1, h2, h3 {
 }
 
 @keyframes wiggleCake {
-    0%, 100% { transform: rotate(-3deg) scale(1); }
-    50% { transform: rotate(3deg) scale(1.06); }
+    0%, 100% { transform: rotate(-2deg) scale(1); }
+    50% { transform: rotate(2deg) scale(1.05); }
 }
 
 /* Bouncing 3D Cartoon Story Cards */
@@ -139,8 +151,9 @@ h1, h2, h3 {
 .toon-pic {
     border-radius: 16px;
     width: 100%;
-    height: 165px;
+    height: 170px;
     object-fit: cover;
+    background: #f1f2f6;
 }
 
 .toon-label {
@@ -199,7 +212,7 @@ else:
     """, unsafe_allow_html=True)
     st.info("💡 Tip: Upload 'bitmoji.png' to your GitHub repository so Sidra's Snapchat Bitmoji appears right here!")
 
-# 3. Preview Cartoon Row (100% Pure Cartoons: Doraemon, Happy Jerry, Excited Pikachu)
+# 3. Preview Cartoon Row (Happy Doraemon, Good-Vibe Cute Jerry, Excited Pikachu)
 g1, g2, g3 = st.columns(3)
 with g1:
     st.markdown("""
@@ -209,137 +222,15 @@ with g1:
     </div>
     """, unsafe_allow_html=True)
 with g2:
+    # Replaced fighting Tom & Jerry with happy, wholesome Jerry & Nibbles!
     st.markdown("""
     <div class="toon-card-box" style="animation-delay: 0.4s;">
-        <img src="https://media.giphy.com/media/y9QemIlaYYWdi/giphy.gif" class="toon-pic">
-        <div class="toon-label" style="color:#ffa502;">Excited Jerry! 🧀</div>
+        <img src="https://media.tenor.com/T4h5q6QMk00AAAAM/tom-and-jerry-flattered.gif" class="toon-pic">
+        <div class="toon-label" style="color:#ffa502;">Happy Jerry! 🧀</div>
     </div>
     """, unsafe_allow_html=True)
 with g3:
     st.markdown("""
     <div class="toon-card-box" style="animation-delay: 0.8s;">
         <img src="https://media.giphy.com/media/xuXzcHMkuwvf2/giphy.gif" class="toon-pic">
-        <div class="toon-label" style="color:#ff4757;">Super Hyped! ⚡</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-# 4. Passcode Lock Card
-st.markdown("""
-<div class="cartoon-card card-doraemon" style="text-align: center;">
-    <div class="card-title" style="color: #0097e6;">🔔 Doraemon & Jerry's Secret Passcode 🔔</div>
-    <div class="card-text">
-        To unlock Sidra's <b>24th Birthday Toon World</b>, enter the exact date (Day & Month) a random Snapchat story right after Iftari & Maghrib turned into the best friendship ever!
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-password = st.text_input("✨ Type the secret date here (Format: 20 March) and press Enter:", "")
-
-# 5. Unlocked Birthday World
-if password.strip().lower() in ["20 march", "march 20", "20th march", "20 march "]:
-    st.balloons()
-    
-    st.markdown("<h2>🎉 HAPPY 24th BIRTHDAY SIDRA! 🎉</h2>", unsafe_allow_html=True)
-    
-    # Row 1 of Pure Excited Cartoons (Doraemon Party, Tom & Jerry Laughing, SpongeBob Cheering)
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        st.markdown("""
-        <div class="toon-card-box">
-            <img src="https://media.giphy.com/media/KdrWY4sOKhpyVvwWiZ/giphy.gif" class="toon-pic">
-            <div class="toon-label" style="color:#0097e6;">Doraemon Dance! 🕺</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with c2:
-        st.markdown("""
-        <div class="toon-card-box" style="animation-delay: 0.5s;">
-            <img src="https://media.giphy.com/media/8rEiN2GsOdQTm/giphy.gif" class="toon-pic">
-            <div class="toon-label" style="color:#ff4757;">Besties Forever! 🐱🐭</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with c3:
-        st.markdown("""
-        <div class="toon-card-box" style="animation-delay: 1s;">
-            <img src="https://media.giphy.com/media/nDSlfqf0gn5g4/giphy.gif" class="toon-pic">
-            <div class="toon-label" style="color:#ffa502;">Pure Joy! 🌟</div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # Story Card 1: 20 March Ramadan Story
-    st.markdown("""
-    <div class="cartoon-card card-tom">
-        <div class="card-title" style="color: #ff4757;">🌙 20th March: Better Than Doraemon's Anywhere Door!</div>
-        <div class="card-text">
-            It is honestly crazy to think that we have never met in person, yet I tell you literally everything about my personal life! All because you saw my Snapchat story and added me on <b>20th March in Ramadan</b>, right after Iftari and Maghrib prayer. Distance means nothing when a friendship is this real! 🌟
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Story Card 2: Tom & Jerry Referee for Wifey
-    st.markdown("""
-    <div class="cartoon-card card-jerry">
-        <div class="card-title" style="color: #ffa502;">🐱🐭 Official Tom & Jerry Peacekeeper!</div>
-        <div class="card-text">
-            Whenever me and my wifey fight and get angry at each other like <b>Tom and Jerry</b>, you always step in, calm both of us down, and help us go back to normal! Thank you for always supporting my relationship and having my back through everything. 🕊️💖
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Row 2 of Pure Excited Cartoons (Doraemon Flying, Minions Cheering, Cartoon Party)
-    d1, d2, d3 = st.columns(3)
-    with d1:
-        st.markdown("""
-        <div class="toon-card-box">
-            <img src="https://media.giphy.com/media/l4EoPk1lohVe4674I/giphy.gif" class="toon-pic">
-            <div class="toon-label" style="color:#0097e6;">Flying High! 🚁</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with d2:
-        st.markdown("""
-        <div class="toon-card-box" style="animation-delay: 0.4s;">
-            <img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif" class="toon-pic">
-            <div class="toon-label" style="color:#ffa502;">Yayyy Birthday! 🎉</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with d3:
-        st.markdown("""
-        <div class="toon-card-box" style="animation-delay: 0.8s;">
-            <img src="https://media.giphy.com/media/blSTtZehjAZ8I/giphy.gif" class="toon-pic">
-            <div class="toon-label" style="color:#8c7ae6;">Party Mode! 🎶</div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # Story Card 3: Level 24 Verdict
-    st.markdown("""
-    <div class="cartoon-card card-sidra">
-        <div class="card-title" style="color: #8c7ae6;">👑 Welcome to Level 24, Bestie!</div>
-        <div class="card-text">
-            You are hands down the best person in friendship I have ever met. Sometimes I genuinely wonder how someone so pure-hearted and perfect like you even exists in this world! Wishing you the happiest <b>24th Birthday</b> filled with endless smiles, cartoons, peace, and success! 🎂🎁🌈
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    # Interactive Doraemon Pocket Surprise Button
-    st.write("")
-    if st.button("🔔 CLICK TO OPEN DORAEMON'S 24th BIRTHDAY POCKET! 🎁"):
-        st.snow()
-        st.balloons()
-        st.markdown("<h2>✨ CHAPTER 24: OFFICIALLY THE GREATEST BEST FRIEND EVER! ✨</h2>", unsafe_allow_html=True)
-        s1, s2 = st.columns(2)
-        with s1:
-            st.markdown("""
-            <div class="toon-card-box">
-                <img src="https://media.giphy.com/media/fzFiKLW1BFsaY/giphy.gif" class="toon-pic" style="height: 220px;">
-                <div class="toon-label" style="color:#0097e6;">Best Friends Forever! 💙</div>
-            </div>
-            """, unsafe_allow_html=True)
-        with s2:
-            st.markdown("""
-            <div class="toon-card-box">
-                <img src="https://media.giphy.com/media/3o6fJ1BM7R2EBRDnxK/giphy.gif" class="toon-pic" style="height: 220px;">
-                <div class="toon-label" style="color:#ff4757;">Happy 24th Birthday Sidra! 🎂</div>
-            </div>
-            """, unsafe_allow_html=True)
-
-elif password != "":
-    st.error("❌ Jerry says wrong passcode! Hint: Think back to Ramadan right after Iftari & Maghrib! (Format: 20 March) 🌙")
+        <div class="toon-label" style="color:#ff4757;">
